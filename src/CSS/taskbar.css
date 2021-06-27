@@ -1,0 +1,157 @@
+/* taskbar div */
+.taskbar {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  background: rgba(15, 15, 15, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  z-index: 10;
+ 
+
+}
+
+@keyframes fade{
+	from{
+	    opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+/* app container inside taskbar */
+.taskbar .apps {
+  width: 25vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* apps inside app container */
+.taskbar .apps .apps-c {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.taskbar .apps .apps-c:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+/* app icons */
+.taskbar .apps .apps-c i {
+  transform: scale(1.4);
+}
+.taskbar .apps .apps-c img {
+  width: 1.5rem;
+}
+
+/* quick access container */
+.taskbar .access {
+  position: absolute;
+  right: 0;
+  width: 15vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* quick access icon container */
+.taskbar .access .q-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.q-a:hover,
+.calendar:hover,
+.divide:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+/* quick access icons */
+.taskbar .access .q-a i {
+  color: white;
+  transform: scale(0.9);
+}
+/* date,time container */
+.taskbar .access .calendar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Calibri", sans-serif;
+  font-weight: 200;
+  transition: 0.3s;
+
+  z-index: 5;
+}
+/* calendar text part */
+.taskbar .access .calendar .cal {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+/* calendar date animation on hover */
+.taskbar .access .calendar:hover .date {
+  opacity: 1;
+  transform: translateY(0);
+}
+.taskbar .access .calendar .date {
+  position: absolute;
+  top: -3rem;
+  left: 6.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: rgb(50, 50, 50);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgb(200, 200, 200);
+
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  z-index: 3;
+}
+.taskbar .access .calendar .date::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  z-index: 0;
+  background: rgb(50, 50, 50);
+}
+
+/* division at the end */
+.taskbar .access .divide {
+  transform: translateX(5px);
+  width: 10px;
+  border-radius: 5px;
+  height: 100%;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* calendar date animation on hover */
+.taskbar .q-a:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}

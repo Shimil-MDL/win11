@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+
 @import "./src/CSS/windows.css";
 @import "./src/CSS/taskbar.css";
 
@@ -9,15 +11,20 @@
 
 /* desktop body */
 body {
-  background: url("./src/assets/windows_11_bg_dark.jpg");
+  /* background: url("./src/assets/windows_11_bg_dark.jpg");
   background-repeat: no-repeat;
-  
-  height: 100vh;
   background-size: cover;
+  */
+  height: 100vh;
+  
 
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+}
+
+.mobile{
+	display: none;
 }
 
 #vid{
@@ -25,30 +32,74 @@ body {
 	width: 100vw;
 	left: 50%;
 	top: 63%;
-	background: rgb(53,66,91);
-	background: radial-gradient(circle,rgb(53,66,91) 5%,rgb(13,29,68) 53%,rgb(10,29,61) 83%);
+	background: #030f1f;
+	background: radial-gradient(circle,#081832 15%,#030f1f 53%,#000a16 83%);
 	
 	transform: translate(-50%,-50%);
-
+	
+	
 }
 
 
 @media (max-width: 500px){
 	body{
-		background: rgb(10,29,61);
-		height: 100vh;
-		position: relative;
+		background: #000a16;
+		display: block;
+		overflow: hidden;
+	}
+	.mobile{
+		position: absolute;
+		width: 100vw;
+		height: 150vh;
+		top: 10%;
+		left: 60%;
+		transform: translate(-50%,0%);
+		font-family: "Montserrat", sans-serif;
+		font-size:2.5rem;
+		color: #57affc;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		z-index: 10;
+	}
+	.mob-time{
+		font-size: 4rem;
+	}
+	.mob-date,.mob-day{
+		font-size: 1.7rem;
+		opacity: 0.8;
+	}
+	.mob-msg{
+		color: #000a16;
+		font-weight: bolder;
+		width: 100%;
+		text-shadow: 0.5px 0.5px 1px #000000e9, -0.5px -0.5px 1px #efefefa0;
+		font-size:1.5rem;
+		margin-top: 3rem;
+		
+	}
+	.mob-msg2{
+		position: absolute;
+		width: 100%;
+		margin-top: 250%;
+		opacity: 0.7;
+		font-size:1.5rem;
+		
+		color: #000a16;
+		font-weight: bolder;
+		text-shadow: 1px 1px 2px #000000e9, -1px -1px 2px #efefefa0;
 	}
 	.taskbar{
 		display: none;
 	}
+	.windows{
+		display: none;
+	}
 	#vid{
 		position: absolute;
-		top: 40%;
-		left: 80%;
-		transform: translateX(-50%);
-	background: transparent;
-	width: 1200px;
+		transform: translateX(-45%) translateY(-30%) scale(2);
+		background: transparent;
+		width: 130%;
 	}
 }
 
